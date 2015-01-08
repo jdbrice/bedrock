@@ -3,9 +3,9 @@ BedRock
 
 A Foundation project for roobarb. Good starting point for a small project.
 
-### 1. Make sure Roobarb lib is installed
-### 2. git clone into working dir
-### 3. add codes and go
+1. Make sure Roobarb lib is installed
+2. Then git clone into working dir
+3. Add codes and go
 
 Includes:
 - project directory structure
