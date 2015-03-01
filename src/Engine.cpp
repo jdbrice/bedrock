@@ -1,7 +1,7 @@
 
-#include "XmlConfig.h"
-using namespace jdb;
 
+#include "TreeAnalyzer.h"
+using namespace jdb;
 
 #include <iostream>
 #include <exception>
@@ -25,11 +25,17 @@ int main( int argc, char* argv[] ) {
 				fileList = (string) argv[ 2 ];
 				jobPrefix = (string) argv[ 3 ];
 			}
+			
+			if ( "DataSource" == config[ "job" ] ){
+				TreeAnalyzer ta( &config, "" );
+				ta.make();
+			}
 
 		} catch ( exception &e ){
 			cout << e.what() << endl;
 		}
 
 	}
+
 	return 0;
 }
