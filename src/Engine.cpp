@@ -1,6 +1,6 @@
 
 
-#include "TreeAnalyzer.h"
+#include "XmlConfig.h"
 using namespace jdb;
 
 #include <iostream>
@@ -24,11 +24,6 @@ int main( int argc, char* argv[] ) {
 			if ( argc >= 4){
 				fileList = (string) argv[ 2 ];
 				jobPrefix = (string) argv[ 3 ];
-			}
-			
-			if ( "DataSource" == config[ "job" ] ){
-				TreeAnalyzer ta( &config, "" );
-				ta.make();
 			}
 
 		} catch ( exception &e ){
