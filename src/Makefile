@@ -29,7 +29,7 @@ $(JDB_LIB)/lib/libRooBarbUnitTest.a \
 cxx 		= g++ -std=c++0x
 flags 		= -Wall -g $(ROOTCFLAGS) $(includes) -Wno-write-strings -fno-inline 
 compile 	= $(cxx) $(flags) -c 
-ldFlags  	= $(ROOTLDFLAGS) -g
+ldFlags  	= $(ROOTLDFLAGS) -g -O3
 
 all: $(project)
 

@@ -1,7 +1,7 @@
 
+
 #include "XmlConfig.h"
 using namespace jdb;
-
 
 #include <iostream>
 #include <exception>
@@ -49,5 +49,6 @@ int main( int argc, char* argv[] ) {
 		}
 
 	}
+
 	return 0;
 }
