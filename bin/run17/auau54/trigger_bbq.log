@@ -1,0 +1,25 @@
+****************************************
+Minimizer is Linear
+Chi2                      =      28.7407
+NDf                       =           18
+p0                        =      4096.03   +/-   0.102077    
+p1                        =     -3.78248   +/-   0.017938    
+Info in <TCanvas::Print>: Current canvas added to pdf file rpTriggerCheck_bbq.pdf
+
+Vpd +/- 5cm
+4077 -> 4115
+
+Vpd +/- 10cm
+4058 -> 4134
+
+Vpd +/- 30cm
+3983 -> 4210
+
+Vpd +/- 50cm
+3907 -> 4285
+
+Vpd +/- 70cm
+3831 -> 4361
+
+Vpd +/- 100cm
+3718 -> 4474

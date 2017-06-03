@@ -6,7 +6,12 @@ using namespace jdb;
 #include <iostream>
 #include <exception>
 
+#include "GainChecker.h"
+#include "TriggerChecker.h"
+
 int main( int argc, char* argv[] ) {
+
+	Logger::setGlobalLogLevel( "all" );
 
 	if ( argc >= 2 ){
 
@@ -25,6 +30,19 @@ int main( int argc, char* argv[] ) {
 				fileList = (string) argv[ 2 ];
 				jobPrefix = (string) argv[ 3 ];
 			}
+			string job = config.getString( "Job", "" );
+
+			if ( "TriggerChecker" == job ){
+				TriggerChecker tc;
+				tc.init( config, "TriggerChecker." );
+				tc.make();
+
+			} else {
+				GainChecker gc;
+				gc.init( config, "GainChecker." );
+				gc.make();	
+			}
+
 
 		} catch ( exception &e ){
 			cout << e.what() << endl;

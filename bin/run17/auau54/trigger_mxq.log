@@ -1,0 +1,26 @@
+****************************************
+Minimizer is Linear
+Chi2                      =      28.1838
+NDf                       =           18
+p0                        =      4087.77   +/-   0.153182    
+p1                        =     -4.21708   +/-   0.0269561   
+Info in <TCanvas::Print>: Current canvas added to pdf file rpTriggerCheck_mxq.pdf
+
+
+Vpd +/- 5cm
+4067 -> 4109
+
+Vpd +/- 10cm
+4046 -> 4130
+
+Vpd +/- 30cm
+3961 -> 4214
+
+Vpd +/- 50cm
+3877 -> 4299
+
+Vpd +/- 70cm
+3793 -> 4383
+
+Vpd +/- 100cm
+3666 -> 4509

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- A root node is required -->
+<!--  It can be anything <root></root>, it just has to exist -->
+<config>
+			
+	<GainChecker>
+		<Logger globalLogLevel="info" />
+
+		<Detector>West</Detector>
+
+		
+
+		<Reporter>
+			<output url="rpGainCheck.pdf"/>
+		</Reporter>
+
+		<histograms>
+			<Histo name="bbqAdcEast" title="bbqAdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="500" min_y="1" max_y="500" />
+			<Histo name="bbqAdcWest" title="bbqAdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="500" min_y="1" max_y="500" />
+			
+			<Histo name="pDiffBbqWest" title="Percent Diff West Bbq ADC" nBins_x="16" min_x="0" max_x="16" />
+			<Histo name="pDiffBbqEast" title="Percent Diff East Bbq ADC" nBins_x="16" min_x="0" max_x="16" />
+
+			
+
+
+			<Histo name="leEast" title="le East" nBins_x="19" min_x="0" max_x="19" nBins_y="50" min_y="1" max_y="50000" />
+			<Histo name="totEast" title="tot East" nBins_x="19" min_x="0" max_x="19" nBins_y="20" min_y="5" max_y="50" />
+
+			<Histo name="leWest" title="le West" nBins_x="19" min_x="0" max_x="19" nBins_y="50" min_y="1" max_y="50000" />
+			<Histo name="totWest" title="tot West" nBins_x="19" min_x="0" max_x="19" nBins_y="20" min_y="5" max_y="50" />
+
+			<Histo name="pDiffTotWest" title="Percent Diff West Tot" nBins_x="19" min_x="0" max_x="19" />
+
+			<Histo name="pDiffTotEast" title="Percent Diff East Tot" nBins_x="19" min_x="0" max_x="19" />
+
+
+		</histograms>
+
+		<input>
+			<dst treeName="tof" url="/Users/danielbrandenburg/bnl/local/work/TofPicoDstMaker/bin/out/" maxFiles="1" nEvents="1000" />
+		</input>
+		<output>
+			<data>gain.root</data>
+		</output>
+
+
+		<DataSource />
+	</GainChecker>
+
+
+</config>

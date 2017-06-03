@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- A root node is required -->
+<!--  It can be anything <root></root>, it just has to exist -->
+<config>
+			
+	<Job>TriggerChecker</Job>
+	<TriggerChecker>
+		<Logger logLevel="all" /> 
+		<Reporter><output url="rpTriggerCheck.pdf" width="800" height="1200"/></Reporter>
+
+		<Crate>bbq</Crate>
+		<Slewing url="/Users/danielbrandenburg/bnl/local/work/vpdCalibration/bin/run15/pA200/wrongOffset/bbq_params.dat"/>
+
+		<histograms>
+			<Histo name="bbqAdcEast" title="bbqAdc East" nBinsX="16" minX="0" maxX="16" nBinsY="400" minY="1" maxY="4096" />
+			<Histo name="bbqAdcWest" title="bbqAdc West" nBinsX="16" minX="0" maxX="16" nBinsY="400" minY="1" maxY="4096" />
+
+
+			<Histo name="bbqTdcEast" title="bbqTdc East" nBinsX="16" minX="0" maxX="16" nBinsY="400" minY="1" maxY="4096" />
+			<Histo name="bbqTdcWest" title="bbqTdc West" nBinsX="16" minX="0" maxX="16" nBinsY="400" minY="1" maxY="4096" />
+
+			<Histo name="TriggerVsTPC" title="bbq; TPC vZ[cm]; TAC_{west} - TAC_{east} + 4096" widthX="1" minX="-80" maxX="80" widthY="1" minY="3796" maxY="4396" />
+			<Histo name="vpdVz" title="VPD" widthX=".5" minX="-2000" maxX="2000" />
+			<Histo name="tpcVz" title="TPC" widthX=".5" minX="-60" maxX="60" />
+
+		</histograms>
+
+		<DataSource treeName="tof" url="/Users/danielbrandenburg/bnl/local/data/Run15/pA200/" maxFiles="1" maxEvents="100000" />
+	</TriggerChecker>
+
+
+</config>

@@ -14,8 +14,7 @@
 
 #remove items in bin used for managing different jobs
 /bin/*.dat
-/bin/*.pdf
-/bin/*.xml
+*.pdf
 /bin/app
 # but keep the sample config
 !/bin/config.xml

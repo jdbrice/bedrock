@@ -4,7 +4,7 @@ project = app
 # source suffix
 source = .cpp 
 # object files to make
-objects = Engine.o
+objects = Engine.o GainChecker.o TriggerChecker.o
 
 sources = $(wildcard *.cpp)
 headers = $(wildcard ../include/*.h)
@@ -19,7 +19,12 @@ ROOTGLIBS     	= $(shell root-config --glibs)
 # -lGui -lHtml -lGuiHtml
 includes		= -I../include -I$(JDB_LIB)/include/jdb -I$(JDB_LIB)/include/ -I. -I$(ROOTSYS)/include
 libraries 		= $(ROOTLIBS) $(SYSLIBS)
-staticLibs 		= $(JDB_LIB)/lib/libJDB.a
+staticLibs 		= $(JDB_LIB)/lib/libRooBarbConfig.a \
+$(JDB_LIB)/lib/libRooBarbCore.a \
+$(JDB_LIB)/lib/libRooBarbExtra.a \
+$(JDB_LIB)/lib/libRooBarbRootAna.a \
+$(JDB_LIB)/lib/libRooBarbTasks.a \
+$(JDB_LIB)/lib/libRooBarbUnitTest.a \
 
 cxx 		= g++ -std=c++0x
 flags 		= -Wall -g $(ROOTCFLAGS) $(includes) -Wno-write-strings -fno-inline 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- A root node is required -->
+<!--  It can be anything <root></root>, it just has to exist -->
+<config>
+			
+	<Job>TriggerChecker</Job>
+	<TriggerChecker>
+		<Logger globalLogLevel="info" /> 
+		<Reporter><output url="rpTriggerCheck_bbq.pdf" width="800" height="1200"/></Reporter>
+
+		<Crate avg="false">Bbq</Crate>
+
+
+		<XmlFunction formula="pol1" p0="4096.029036" e0="0.102077" p1="-3.78248" e1="0.017938" />
+		<doResolution>true</doResolution>
+
+
+		<Slewing url="/Users/danielbrandenburg/bnl/local/work/vpdCalibration/bin/run17/auau54/trigger/bbq_params.dat"/>
+		<!-- <ApplyCorr>false</ApplyCorr> -->
+
+
+		<histograms>
+			
+			<Histo name="adcEast" title="adc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="adcWest" title="adc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+			<Histo name="tdcEast" title="tdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="tdcWest" title="tdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+			<Histo name="tdcEastPostTacOff" title="tdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="tdcWestPostTacOff" title="tdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+			<Histo name="tdcEastPostSlew" title="tdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="tdcWestPostSlew" title="tdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+			<Histo name="tdcEastPostNoise" title="tdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="tdcWestPostNoise" title="tdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+			<Histo name="bbqAdcEast" title="bbqAdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="bbqAdcWest" title="bbqAdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+
+			<Histo name="bbqTdcEast" title="bbqTdc East" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+			<Histo name="bbqTdcWest" title="bbqTdc West" nBins_x="16" min_x="0" max_x="16" nBins_y="400" min_y="1" max_y="4096" />
+
+			<Histo name="TriggerVsTPC" title="bbq; TPC vZ[cm]; TAC_{west} - TAC_{east} + 4096" width_x="1" min_x="-80" max_x="80" width_y="2" min_y="3796" max_y="4396" />
+			<Histo name="TriggerVsTPCRes" title="bbq; TPC vZ[cm]; TAC_{west} - TAC_{east}" width_x="1" min_x="-40" max_x="40" width_y="2" min_y="-150" max_y="150" />
+			<Histo name="vpdVz" title="VPD" width_x=".5" min_x="-60" max_x="60" />
+			<Histo name="vpdTACVz" title="VPD" width_x="1" min_x="-2000" max_x="2000" />
+			<Histo name="tpcVz" title="TPC" width_x=".5" min_x="-60" max_x="60" />
+			<Histo name="deltaVz" title="TPC - VPD" width_x=".1" min_x="-50" max_x="50" />
+
+		</histograms>
+
+		<input>
+			<dst treeName="tof" url="/Users/danielbrandenburg/bnl/local/data/Run17/auau54_vpd_slew/" maxFiles="500" maxEvents="100000" />
+		</input>
+		<DataSource  />
+
+		<output path="run17/auau54/">
+			<data>trigger_bbq.root</data>
+		</output>
+	</TriggerChecker>
+
+
+</config>
